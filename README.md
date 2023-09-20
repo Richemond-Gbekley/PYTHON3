@@ -1,3 +1,6 @@
 #PYTHON3
 
 LESSONS (TUTORIALS)
+
+##OUTLINE
+a.Varibales
