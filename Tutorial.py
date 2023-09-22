@@ -26,6 +26,8 @@ print("Operators ::: " +str (answer) ) # as the addition was assigned to the  va
 print("*************")#the answer to the varible answer and printed out the answer using the declared variable
                #NB::: Convert the integer to a string before concatenating(STR)(Text type)
                
+               #https://www.w3schools.com/python/python_operators.asp(A link to know more about operators)
+               
           #Pulling out , from a list     
 Likes = ["Hack" , "Pen Test" ," Web Test"]
 x,y,z = Likes
@@ -85,7 +87,7 @@ i did , so keep silence , head straight, take your coffee ,
 and read so that you can get everything im saying , innit"""
 print(Documentation)
 
-#Arrays are arrays
+#Strings are arrays
 print("\n")
 print("String are arrays")
 print("*******************")
@@ -148,6 +150,8 @@ print("*************")
 number = 200
 txt = " When you see the number {} it means okay, and that you are good to go"
 print(txt.format(number))
+
+
 # for multiple formatting :NB you can use indexing to help arrange it in the order in which you want
 print("\n")
 print("Multiple string Format")         
