@@ -31,6 +31,7 @@ print("*****")
 mylist = ["Ethical Hacking","Pentesting","Data Science","Artificial INtelligence"]
 print(mylist)
 #List items are ordered, changeable, and allow duplicate values.
+       #                 ***********
 
 #Allowing Duplicates
 mylist = ["Ethical Hacking","Pentesting","Data Science","Artificial INtelligence","Data Science"]
