@@ -23,3 +23,28 @@ e.Strings
 
 #Tutorial2
 ##Outline
+*Escaping Character String
+*boolean Values
+*List
+a.Allowing Duplicate
+b.List Length
+c.Checking the type
+d.List Constructors
+e.Accessing List items
+f.Negative indexing
+g.Range of indexing 
+h.Checking if the item exits with the help of if statement
+i.Change item value
+j.Change a range of item values
+k.Insert new item
+l.Append new item
+m.Extending a new list
+n.Removing an item from a new list
+o.Pop
+p.del will remove the specific index
+q.del would also delete the list 
+Eg del <list>
+r.clear , would clear the list
+s.Loop through list
+t.Using while loop
+u.Looping through a list using list comprehension
