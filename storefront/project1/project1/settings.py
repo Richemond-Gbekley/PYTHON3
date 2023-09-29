@@ -34,9 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Arduino', #After creating the name of the app with the help of the command line python manage.py startapp <the name of the app >
+              #you add the name here in the list of installed apps
 ]
 
 MIDDLEWARE = [

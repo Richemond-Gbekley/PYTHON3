@@ -156,3 +156,8 @@ print("Accessing items in Dictionary")
 print("******************************")
 print(mydict.get("Age"))
 
+#Get Keys
+#The keys() method will return a list of all the keys in the dictionary.
+x = mydict.get()
+print(x)
+
