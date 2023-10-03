@@ -5,5 +5,6 @@ from .import views
 #defining our special variables
 #Url conf(configuration)
 urlpatterns = [
-    path('Home/',views.request)
+    path('Home/', views.request),
+     path('', views.request, name='request'),
 ]

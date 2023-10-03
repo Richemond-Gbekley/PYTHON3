@@ -15,10 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include ,path  # if you want to include another url conf, you add include just after the import path
-
+from django.urls import path  # if you want to include another url conf, you add include just after the import path
+from django.urls import include, path
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('Arduino/',include('Arduino.urls'))#You also add the url here
+   path('admin/', admin.site.urls),
+    path('Arduino/Home',include('Arduino.urls')),#You also add the url here
+    path('', include('Arduino.urls')),
     
 ]
+
+#It looks like you've made progress! The error message you're seeing now is a standard 404 page, 
+# which means that Django is correctly recognizing your project's URL patterns.
+#The issue seems to be that you don't have a URL pattern defined for the root URL.
+# To fix this, you need to add a pattern for the empty path in your urls.py file.
+#In your project1/urls.py file, you can do something like this:

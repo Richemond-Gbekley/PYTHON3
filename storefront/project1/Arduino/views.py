@@ -11,6 +11,12 @@ def request(request) :                  #This function is taking a request objec
       #We can pull data
       #We can transform data
       #We can send emails                                  
-      return HttpResponse('YOUR WORLD OF ARDUINO')  #Creating an instance of the http response class
+      ########return HttpResponse('YOUR WORLD OF ARDUINO')  #Creating an instance of the http response class
   
                          #After we mark this view to url, so that when we get a request on that url , a fuction would be called.
+                           
+      return render(request, 'Home.html')                     #Using html templates
+ #return render(request, 'Arduino/Templat_Home.html')
+ 
+  #return render(request, 'Arduino/Home.html')
+
