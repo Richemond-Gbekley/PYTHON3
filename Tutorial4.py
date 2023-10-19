@@ -138,3 +138,267 @@ o.myfunc()
    #  The self Parameter
 #The self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.
 #It does not have to be named self , you can call it whatever you like, but it has to be the first parameter of any function in the class:
+
+#Inheritance 
+#inheritance allows us to define a class that inherits all the methods and properties from another class
+
+#Parent class is the class being inherited from , also called base class 
+#Child class is the class that inherits from another class, also called derived class
+
+#CREATE A PARENT CLASS
+#Any class can be parent class, so the syntax is the same as creating any other class
+
+print("\n")
+print("Creating a parent class")
+print("************************")
+class Electronic_device :
+    def __init__(self, Product , Price ) :
+        self.product = Product 
+        self.price = Price
+        
+    def printresult(self) :
+            print(self.product , self.price)
+            
+O1 = Electronic_device ("Module charger  :" , 100)
+O1.printresult()      
+
+
+# Creating a child class 
+#To create a class that inherits the functionality from another class, send the parent class as a parameter
+#when creating the child class
+print("\n")
+print("Creating a child class without adding properties and method")
+print("**************************************************************")
+class Arduino (Electronic_device) :
+    pass
+
+#Note : use the pass keyword when you do not want to add any other properties or methods to the class.
+O2 = Arduino ("Arduino uno : " , 150)
+O2.printresult()
+
+print("\n")
+print("Creating a child class, adding properties and method")
+print("******************************************************")
+class Arduino (Electronic_device) :                     #To add the init function, it means adding new properties, but also the child class 
+    def __init__(self, Product, Price, Module):         #will no longer inherit the parents init function
+        super().__init__(Product, Price)          #Note : To keep the inheritance of the parents init function, add a call to the parents init function
+        self.module = Module 
+    def result(self) :
+            print(self.product ,":", self.price ,":", self.module)
+#Note : use the pass keyword when you do not want to add any other properties or methods to the class.
+O2 = Arduino ("Arduino uno" , 150 , 2017)
+O2.result()
+
+#Iterators 
+#Is an object that contains a countable number of values 
+#An iterator is an object that can be iterated upon, meaning that you can traverse through all the values
+
+#Technically, in python , an iterator is an object which implements the iterator protocol, which consists of the methods 
+#iter() and next() 
+
+#Note : Iterable is the object that contains a number of countable values , where as iterators counts this values.
+#an example of iterables are list , tuples ,strings, set etc 
+print("\n")
+print("Iterator")
+print("*********")
+mytuple = ("Ethical Hacking " , "Web exploitation" ,"Crytography")
+it = iter(mytuple)
+print(next(it))
+print(next(it))
+print(next(it))
+
+print("\n")
+print("Looping through an iterable")
+print("****************************")
+for x in mytuple :
+    print(x)
+    
+    
+    #Creating an iterator
+    #To create an object/class as an iterator you have to implement to methods 
+    #iter () and next () to your object.
+    #the iter () methods helps to do some operations but also returns the iterator object itself 
+    #The next() method also allows some operations and must return the next item in the sequence
+    
+print("\n")
+print("Creating an Iterator")
+print("*********************")
+class MyNumbers :
+    def __iter__(self) :
+        self.a = 1
+        return self
+    
+    def __next__(self):
+        x = self.a 
+        self.a += 1 
+        return x
+Object_Mynumber = MyNumbers()
+myit = iter(Object_Mynumber)
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
+
+
+#Stop iteartor
+
+print("\n")
+print("Stopping  an Iterator")
+print("*********************")
+class MyNumber :
+    def __iter__(self) :
+        self.a = 1
+        return self
+    
+    def __next__(self):
+        if self.a <= 10 :
+         x = self.a 
+         self.a += 1 
+         return x
+        else :
+         raise StopIteration
+    
+Object_Mynumb = MyNumber()
+myit = iter(Object_Mynumb)
+for x in myit :
+    print(x)
+    
+    #Polymorphism 
+    #Is used in class methods, where we can have multiple classes with the same method name
+    
+print("\n")
+print("Polymorphism")
+print("*************")    
+class email :
+    def __init__(self, email) :
+        self.email = email 
+        
+    def result(self) :
+            print(self.email) 
+           
+class Name :            
+    def __init__(self,Fname ,Sname) :
+        self.fname = Fname 
+        self.sname = Sname
+         
+    def result (self) :
+        print(self.fname , self.sname)
+     
+class contact :
+    def __init__(self, contact) :
+        self.contact = contact 
+        
+    def result(self) :
+            print(self.contact) 
+            
+Object1 = email ("hackathon1234@hackathon.com")
+Object2 = Name ("Hackathon" , "Gameover")
+Object3 = contact ("+44498976876987")
+
+for x in (Object1,Object2,Object3) :
+    x.result()
+                 
+                 #Module
+print("\n") 
+print("Module in Python") 
+print("*****************")               
+import mymodule
+mymodule.greetings("Hackathon")
+
+#Renaming a module 
+#You can create an alias when you import a module , by using the as keyword 
+print("\n") 
+print("Renaming Module in Python") 
+print("***************************") 
+import mymodule as mm 
+mm.greetings("Gameover")
+
+print("\n") 
+print("Module in Python") 
+print("*****************") 
+import platform           #the module platform is an in built function in python and it prints out the OS been used 
+x = platform.system()
+print(x)
+
+print("\n") 
+print("Module in Python") 
+print("*****************")
+import platform           #the dir , would print all the variables names in the module 
+x = dir (platform)
+print(x)
+
+
+print("\n") 
+print("Module in Python") 
+print("*****************")    # the output shows the variable name greetings we created 
+x = dir(mymodule)
+print(x)
+
+#Date time 
+#its also a module
+print("\n") 
+print("Date and time in  python") 
+print("************************") 
+import datetime
+x = datetime.datetime.now()
+print(x.year)
+print(x.strftime("%A"))
+
+print("\n") 
+print("Date and time in python") 
+print("************************") 
+import datetime
+x = datetime.datetime(2023,10,5)
+print(x)
+
+
+#Python try except
+#The try block lets you test a block of code for errors.
+#The except block lets you handle the error.
+#The else block lets you execute code when there is no error.
+#The finally block lets you execute code, regardless of the result of the try- and except blocks
+
+print("\n") 
+print("Try and except in python") 
+print("*************************")
+try :
+     print(a) 
+except :
+     print("Bruh , a was not defined")
+     
+print("\n") 
+print("Try and except in python") 
+print("*************************")
+try : 
+    file = open("myfile.txt") 
+    try:
+        file.write("im writing into the file")
+    except :
+        print("Do you really have this file")
+    finally :
+        file.close()
+except :
+     print("check your file system")
+    
+    
+#Raise an exception
+#You can choose to throw an exception if a condition occurs.
+#To throw (or raise) an exception, use the raise keyword.
+print("\n") 
+print("Raise an exception") 
+print("******************")
+q = 1
+if  q < 2 :
+   raise Exception("sorry , no number below 1")
+print("******************************************")
+print("\n") 
+print("Raise an exception") 
+print("******************")
+
+dial = "*170# "
+
+if not type(dial) is  int :
+    raise TypeError("Integers only")
+
