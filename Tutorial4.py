@@ -402,3 +402,10 @@ dial = "*170# "
 if not type(dial) is  int :
     raise TypeError("Integers only")
 
+
+#User Input
+print("\n") 
+print("User input") 
+print("***********")
+dial_code = input("Dial *170# to enjoy exciting offers \n ")
+
