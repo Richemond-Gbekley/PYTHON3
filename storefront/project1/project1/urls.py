@@ -19,8 +19,10 @@ from django.urls import path  # if you want to include another url conf, you add
 from django.urls import include, path
 urlpatterns = [
    path('admin/', admin.site.urls),
-    path('Arduino/Home',include('Arduino.urls')),#You also add the url here
-    path('', include('Arduino.urls')),
+ #   path('Arduino/Home',include('Arduino.urls')),#You also add the url here
+    path('',include('Arduino.urls')),
+    
+   
     
 ]
 
