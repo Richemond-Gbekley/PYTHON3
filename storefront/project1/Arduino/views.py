@@ -23,11 +23,11 @@ def Home(request) :                  #This function is taking a request object a
  #return render(request, 'Arduino/Templat_Home.html')
  
   #return render(request, 'Arduino/Home.html')
-def Order(request):
+def My_Order(request):
       my_order = Order.objects.all().values()
       template = loader.get_template('Order.html')
       context = {'Order':my_order,}
       return HttpResponse(template.render(context, request))
 
 def About(request):
-      return HttpResponse('<h1>About</h1>')
+      return render(request, 'About.html')

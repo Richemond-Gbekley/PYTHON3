@@ -30,3 +30,9 @@ class Order (models.Model) :
 
 #Delete
 #>>> x.delete()
+
+#To update
+#>>> from Arduino.models import Order
+#>>> x = Order.objects.all()[0]
+#>>> x.Product_Name = 'Uno :'
+#x.save()
